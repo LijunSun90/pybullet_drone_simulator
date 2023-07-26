@@ -24,7 +24,7 @@ def parse_args():
     trajectory_data_folder = os.path.join("data", "trajectory_data")
     parser.add_argument("--trajectory_data_filename", type=str,
                         default=os.path.join(trajectory_data_folder,
-                                             "trajectory_40_40_8_30_p7e3_adversarial.txt"))
+                                             "trajectory_evasion_trained_by_random_vs_adversarial.txt"))
 
     parser.add_argument("--render_save", action="store_true", default=True)
 
@@ -170,6 +170,7 @@ class PybulletSimulator:
         print("data_log_folder:", self.all_args.data_log_folder)
 
         if self.all_args.render_save:
+
             os.makedirs(self.all_args.video_frame_folder, exist_ok=True)
 
             print("video_frame_folder:", self.all_args.video_frame_folder)
